@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./webapp-container/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
