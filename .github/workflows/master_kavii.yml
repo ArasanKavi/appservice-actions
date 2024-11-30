@@ -26,12 +26,12 @@ jobs:
         username: ${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_6dd2bdbc731441dbae84ec2a2025b488 }}
 
-    - name: Build and push container image to registry
-      uses: docker/build-push-action@v3
-      with:
-        push: true
-        tags: kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:${{ github.sha }}
-        file: ./webapp-container/Dockerfile
+    # - name: Build and push container image to registry
+    #   uses: docker/build-push-action@v3
+    #   with:
+    #     push: true
+    #     tags: kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:${{ github.sha }}
+    #     file: ./webapp-container/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,4 +48,4 @@ jobs:
         app-name: 'kavii'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_a2647e72d0e349279a958fbc932d98cb }}
-        images: 'kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:${{ github.sha }}'
+        images: 'kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:f60a3921e60cfd2086186b10f07d73b6897b6e8e'
