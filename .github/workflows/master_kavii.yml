@@ -48,4 +48,4 @@ jobs:
         app-name: 'kavii'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_a2647e72d0e349279a958fbc932d98cb }}
-        images: 'kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:f60a3921e60cfd2086186b10f07d73b6897b6e8e'
+        images: 'kavii.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_fe430d4187544e798a5c50b05bdb1bf4 }}/nginx:latest'
